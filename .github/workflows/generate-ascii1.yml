@@ -18,6 +18,7 @@ jobs:
 
 
   Test_Job:
+    needs: Build_Job
 
    runs-on: ubuntu-latest
    steps: 
@@ -28,6 +29,7 @@ jobs:
           run: grep -i "dragon" dragon.txt
 
   Deploy_job:
+    needs: Test_Job
 
     runs-on: ubuntu-latest
 
